@@ -2,9 +2,8 @@ import React from "react";
 import { useState } from "react";
 import CheckBox from "./checkBox";
 
-// crear function
-const TaskList = () => {
-    const [list, setList] = useState(['ejemplo1', 'ejemplo2', 'ejemplo3'])
+const TaskList = props => {
+    const {list} = props
 
     return (
         <div>
@@ -15,5 +14,4 @@ const TaskList = () => {
     )
 }
 
-// export funcion
 export default TaskList;

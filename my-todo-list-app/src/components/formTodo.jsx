@@ -1,8 +1,13 @@
 import React from "react";
 import { useState } from "react";
 
-const FormTodo = () => {
+const FormTodo = props => {
+    const {list, setList} = props
     const [description, setDescription] = useState("")
+
+    const addDescriptionToList = () => {
+        setList([...list, description])
+    }
 
     return (
         <div>
@@ -11,7 +16,7 @@ const FormTodo = () => {
                 value={description}
                 onChange={event => setDescription(event.target.value)}>
             </input>
-            <button>Add</button>
+            <button onClick={addDescriptionToList}>Add</button>
         </div>
     );
 }
